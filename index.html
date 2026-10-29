@@ -145,8 +145,18 @@ nav {
   align-items: center;
   gap: 8px;
 }
+.logo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFF;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+nav .logo-badge { padding: 4px; }
+footer .logo-badge { padding: 5px; }
 .nav-logo-mark {
-  height: 32px;
+  height: 28px;
   width: auto;
   display: block;
 }
@@ -843,7 +853,7 @@ footer .section-inner {
   gap: 10px;
 }
 .footer-logo-mark {
-  height: 36px;
+  height: 30px;
   width: auto;
   display: block;
 }
@@ -935,7 +945,7 @@ footer .section-inner {
 <!-- ===== NAVIGATION ===== -->
 <nav>
   <div class="nav-inner">
-    <a href="#top" class="nav-logo"><img src="assets/logo-icon.png" alt="" class="nav-logo-mark">Dubai Residency <span>Experts</span></a>
+    <a href="#top" class="nav-logo"><span class="logo-badge"><img src="assets/logo-icon.png" alt="" class="nav-logo-mark"></span>Dubai Residency <span>Experts</span></a>
     <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
       <svg width="24" height="24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -1665,7 +1675,7 @@ footer .section-inner {
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="section-inner">
-    <div class="footer-logo"><img src="assets/logo-icon.png" alt="Dubai Residency Experts" class="footer-logo-mark">Dubai Residency <span>Experts</span></div>
+    <div class="footer-logo"><span class="logo-badge"><img src="assets/logo-icon.png" alt="Dubai Residency Experts" class="footer-logo-mark"></span>Dubai Residency <span>Experts</span></div>
 
     <div class="footer-columns">
       <div class="footer-col">
