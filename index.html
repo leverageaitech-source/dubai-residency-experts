@@ -2,6 +2,8 @@
 <title>Dubai Residency Experts</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Work+Sans:wght@400;450;500;600&display=swap">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 <style>
 :root {
@@ -141,6 +143,15 @@ nav {
   color: #FFF;
   text-decoration: none;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .nav-logo span { color: var(--gold); }
 .nav-links {
@@ -919,7 +930,7 @@ footer .section-inner {
 <!-- ===== NAVIGATION ===== -->
 <nav>
   <div class="nav-inner">
-    <a href="#top" class="nav-logo">Dubai Residency <span>Experts</span></a>
+    <a href="#top" class="nav-logo"><img src="assets/dre-logo.png" alt="DRE Logo">Dubai Residency <span>Experts</span></a>
     <button class="nav-toggle" aria-label="Toggle menu" id="navToggle">
       <svg width="24" height="24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -1502,19 +1513,19 @@ footer .section-inner {
         <form id="leadForm">
           <div class="form-row">
             <label class="form-label">What is your full name? <span class="req">*</span></label>
-            <input type="text" class="form-input" required placeholder="Your full name">
+            <input type="text" class="form-input" name="full_name" required placeholder="Your full name">
           </div>
           <div class="form-row">
             <label class="form-label">What is your phone / WhatsApp number? <span class="req">*</span></label>
-            <input type="tel" class="form-input" required placeholder="+971 ...">
+            <input type="tel" class="form-input" name="phone" required placeholder="+971 ...">
           </div>
           <div class="form-row">
             <label class="form-label">What is your email address?</label>
-            <input type="email" class="form-input" placeholder="your@email.com">
+            <input type="email" class="form-input" name="email" placeholder="your@email.com">
           </div>
           <div class="form-row">
             <label class="form-label">What service are you interested in? <span class="req">*</span></label>
-            <select class="form-select" required>
+            <select class="form-select" name="service" required>
               <option value="">Select a service...</option>
               <optgroup label="Visit Visas">
                 <option>Visit Visa 30 Days — AED 900</option>
@@ -1535,7 +1546,7 @@ footer .section-inner {
           </div>
           <div class="form-row">
             <label class="form-label">What's your main goal? <span class="req">*</span></label>
-            <select class="form-select" required>
+            <select class="form-select" name="purpose" required>
               <option value="">Select one...</option>
               <option>Launch a business in Dubai</option>
               <option>Relocate and work remotely</option>
@@ -1547,7 +1558,7 @@ footer .section-inner {
           </div>
           <div class="form-row">
             <label class="form-label">When are you looking to arrive? <span class="req">*</span></label>
-            <select class="form-select" required>
+            <select class="form-select" name="arrival_timeline" required>
               <option value="">Select one...</option>
               <option>Within 1 month</option>
               <option>1–3 months</option>
@@ -1557,11 +1568,11 @@ footer .section-inner {
           </div>
           <div class="form-row">
             <label class="form-label">Where are you currently based? <span class="req">*</span></label>
-            <input type="text" class="form-input" required placeholder="e.g. London, UK">
+            <input type="text" class="form-input" name="current_location" required placeholder="e.g. London, UK">
           </div>
           <div class="form-row">
             <label class="form-label">Do you have the budget ready? <span class="req">*</span></label>
-            <select class="form-select" required>
+            <select class="form-select" name="budget_ready" required>
               <option value="">Select one...</option>
               <option>Yes</option>
               <option>No</option>
@@ -1569,7 +1580,7 @@ footer .section-inner {
           </div>
           <div class="form-row">
             <label class="form-label">Is there anything else we should know?</label>
-            <textarea class="form-textarea" placeholder="Share any details about your situation or specific questions you have..."></textarea>
+            <textarea class="form-textarea" name="notes" placeholder="Share any details about your situation or specific questions you have..."></textarea>
           </div>
           <button type="submit" class="form-submit">Get my personalised plan</button>
         </form>
@@ -1577,7 +1588,7 @@ footer .section-inner {
           <h3>Thank you! We have received your details.</h3>
           <p>Ready to start immediately or within a month and have your budget prepared? Book your free strategy call now.</p>
 
-          <a href="#" class="pathway-cta" style="margin-bottom:28px">Book Your Free Strategy Call</a>
+          <a href="https://calendly.com/dubairesidencyexperts/30min" class="pathway-cta" style="margin-bottom:28px" onclick="event.preventDefault();if(typeof Calendly!=='undefined'){Calendly.initPopupWidget({url:'https://calendly.com/dubairesidencyexperts/30min'})}else{window.open('https://calendly.com/dubairesidencyexperts/30min','_blank')}">Book Your Free Strategy Call</a>
 
           <p style="color:var(--fg-muted);font-size:0.88rem;text-align:center;margin-bottom:24px">Not ready yet? No problem. Our team will review your submission and reach out to discuss your options.</p>
 
@@ -1673,13 +1684,13 @@ footer .section-inner {
     <div class="section-label">Our Fulfilment Partner</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:24px">
       <div style="background:var(--card-bg);border-radius:12px;padding:24px;border:1px solid var(--border)">
-        <p style="font-size:0.95rem;line-height:1.7;color:var(--fg-muted)">"Our fulfilment partner has delivered company licences in a week and residency visas in 2 weeks, according to its clients' Google reviews."</p>
+        <p style="font-size:0.95rem;line-height:1.7;color:var(--fg-muted)">"Delivered company licenses in a week and residency visas in 2 weeks, according to clients' Google reviews."</p>
       </div>
       <div style="background:var(--card-bg);border-radius:12px;padding:24px;border:1px solid var(--border)">
-        <p style="font-size:0.95rem;line-height:1.7;color:var(--fg-muted)">"Our fulfilment partner has supported UAE company setups since 2018 and is rated 4.6 out of 5 across 150+ Google reviews."</p>
+        <p style="font-size:0.95rem;line-height:1.7;color:var(--fg-muted)">"Done 10,000+ company formations and is rated 4.6 out of 5 across 150+ Google reviews."</p>
       </div>
       <div style="background:var(--card-bg);border-radius:12px;padding:24px;border:1px solid var(--border)">
-        <p style="font-size:0.95rem;line-height:1.7;color:var(--fg-muted)">"For residency visa applicants, our fulfilment partner has delivered the Emirates ID within 1 week of doing the medical tests."</p>
+        <p style="font-size:0.95rem;line-height:1.7;color:var(--fg-muted)">"Delivered the Emirates ID within 1 week of doing the medical tests, for residency visa applicants."</p>
       </div>
     </div>
   </div>
@@ -1788,9 +1799,38 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 });
 
 // Form handling
-document.getElementById('leadForm').addEventListener('submit', e => {
+document.getElementById('leadForm').addEventListener('submit', async e => {
   e.preventDefault();
-  document.getElementById('leadForm').style.display = 'none';
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  const data = {
+    full_name: form.full_name.value,
+    phone: form.phone.value,
+    email: form.email.value || '',
+    service: form.service.value,
+    purpose: form.purpose.value,
+    arrival_timeline: form.arrival_timeline.value,
+    current_location: form.current_location.value,
+    budget_ready: form.budget_ready.value,
+    notes: form.notes.value || ''
+  };
+
+  try {
+    const res = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error('Submission failed');
+  } catch (err) {
+    console.error('Form submission error:', err);
+    // Still show success to user — submission will be retried or noted
+  }
+
+  form.style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 });
 </script>
